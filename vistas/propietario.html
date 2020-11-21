@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles/vistatrabajo.css" type="text/css">
+    <script src="/js/deudor.js"></script>
+    <script src="/js/historial.js"></script>
+    <script src="/js/propietario.js"></script>
+    <title>Propietario</title>
+</head>
+<body class="vistapropietario">
+    <div class="menu">
+        <div class="botones">
+        <button id="registrarU" class="registrarU">Registrar Usuario</button>
+        <button id="pago" class="registrarU">Pagos</button>
+        <button id="regcargo" class="registrarU">Cargos</button>
+        <button id="regAtodos" class="registrarU">Cargo Todos</button>
+        <button id="verestado" class="registrarU">Estado</button>
+        <button id="vermovimiento" class="registrarU">Movimientos</button>
+        <button id="cerrar" class="cerrarS">Cerrar sesion</button>
+        </div>
+    </div>
+    <div id="contenido">
+        <form id="formRegU" style="display: none;">
+        <h2 id="regUsuario">Registrar Deudor</h2>
+        <p>
+        <label for="nombres">Nombre: </label>
+        <input type="text" id="nombres" autofocus required>
+        </p>
+        <p>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" required>
+        </p>
+        <p>
+            <label for="celular">Celular: </label>
+            <input type="tel" id="celular" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="312-100-1234" required>
+        </p>
+        <p>
+            <label for="correo">Correo: </label>
+            <input type="email" id="correo" required>
+        </p>
+        <p>
+            <label for="password">Password: </label>
+            <input type="password" id="password" required>
+        </p>
+        <p>
+            <button type="submit" id="btnagregar" class="btn">Agregar</button>
+        </p>
+        </form>
+        <form id="registroPago" style="display: none;"> <!--Cambiar a select-->
+            <h2 id="regPago">Registrar pago</h2> 
+            <select id="registrarpago">
+            </select>
+            <label for="cantidadpago">Cantidad: </label>
+            <input type="number" id="cantidadpago" required>
+            <label for="fechapago">Fecha: </label>
+            <input type="date" id="fechapago" required>
+            <button type="submit" id="btnpago" class="btn">Registrar</button>
+        </form>
+        <form id="aplicarCargo" style="display: none;"> <!--Cambiar a select-->
+            <h2 id="apCargo">Aplicar cargo a uno o varios usuario (s)</h2>
+            <select id="registrarcargo">
+            </select>
+            <label for="cargo">Cargo: </label>
+            <input type="number" id="cargo" required>
+            <label for="fechacargo">Fecha: </label>
+            <input type="date"  id="fechacargo" required>
+            <button type="submit" id="btncargo" class="btn">Aplicar</button>
+        </form>
+        <form id="cargoAtodos" style="display: none;">
+            <h2 id="cargTodos">Aplicar cargo a todos los usuarios</h2>
+            <label for="cargotodos">Cantidad: </label>
+            <input type="number" id="cargotodos" required autofocus>
+            <label for="fechatodos">Fecha: </label>
+            <input type="date" id="fechatodos" required>
+            <button type="submit" id="btncargoTodos" class="btn">Aplicar</button>
+        </form>
+        <form id="estado" style="display: none;">
+            <h2 id="Edo">Consultar estado de cuenta de Deudor</h2>
+            <label for="deudor">Deudor: </label>
+            <select  id="deudor" required autofocus></select>
+            <button type="submit" id="btnestado" class="btn">Consultar</button>
+        </form>
+        <form id="movimiento" style="display: none;">
+            <h2 id="Mov">Consultar pago/cobro por fecha</h2>
+            <label for="movimientoDeudor">Deudor: </label>
+            <select id="movimientoDeudor" required></select>
+            <label for="fechamovimiento">Fecha: </label>
+            <input type="date" id="fechamovimiento" required>
+            <button type="submit" id="btnmovimiento" class="btn">Consultar</button>
+        </form>
+    </div>
+    <script src="/js/appPropietario.js"></script>
+</body>
+</html>

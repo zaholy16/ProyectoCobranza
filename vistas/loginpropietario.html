@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/home.css" type="text/css">
+    <title>Login</title>
+    <script src="/js/deudor.js"></script>
+    <script src="/js/propietario.js"></script>
+</head>
+<body class="loginpropietario">
+    <form class="formLpropietario">
+        <div class="divlogin">
+            <h2>Login Propietario</h2>
+            <p>
+                <label for="telefonoL">Telefono: </label>
+                <input type="tel" id="telefonoL"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="312-100-1234" required autofocus>  
+            </p>
+            <p>
+                <label for="passwordL">Password: </label>
+                <input type="password" id="passwordL"  placeholder="Ingresa tu contraseña" >
+            </p>
+            <p>
+                <button type="submit" id="btnlogin" class="btnLpropietario">Ingresar</button>
+            </p>
+            <p>
+                <button id="btnclick" class="btnLpropietario">¿No estas registrado? Click,aquí</button>
+            </p>
+        </div>
+        <div id="registro" style="display: none;">
+            <h2>Registrar usuario</h2>
+            <p>
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre"  placeholder="Ingresa tu nombre" required>
+            </p>
+            <p>
+            <label for="apellido">Apellidos</label>
+            <input type="text" id="apellido"  placeholder="Ingresa tu apellido" required>
+            </p>
+            <p>
+            <label for="telefono">Celular: </label>
+            <input type="tel" id="telefono"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="312-100-1234" required>
+            </p>
+            <p>
+            <label for="mail">Correo: </label>
+            <input type="email" id="mail"  placeholder="Ingresa tu e-mail" required>
+            </p>
+            <p>
+            <label for="Password">Password: </label>
+            <input type="password" id="Password"  placeholder="Ingresa tu password" required>
+            </p>
+            <button type="submit" id="btnRegistrar" class="btnLpropietario">Registrar</button>
+        </div>
+    </form>
+    <script src="/js/registroPropietario.js"></script>
+</body>
+</html>

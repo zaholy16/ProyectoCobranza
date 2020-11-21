@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/home.css" type="text/css">
+    <script src="/js/deudor.js"></script>
+    <script src="/js/propietario.js"></script>
+    <script src="/js/historial.js"></script>
+    <title>Login Deudor</title>
+</head>
+<body class="logindeudor">
+    <form class="formLdeudor">
+        <h2>Login deudor</h2>
+        <p>
+            <label for="tel">Telefono: </label>
+            <input type="tel" id="tel"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="312-100-1234" required autofocus>
+        </p>
+        <p>
+            <label for="pass">Contraseña: </label>
+            <input type="password" id="pass" placeholder="Ingresa tu password" required>
+        </p>
+        <div>
+            <button type="button" class="btnLdeudor" id="btningresar">Ingresar</button>
+        </div>
+    </form>
+    <script src="/js/logindeudor.js"></script>
+</body>
+</html>
