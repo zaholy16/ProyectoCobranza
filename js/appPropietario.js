@@ -43,10 +43,12 @@ function seleccionDeudoresCargo(){
 }
 seleccionDeudoresCargo();
 
-function validacionExisteDeudores(nombres,apellidos){
+function validacionExisteDeudores(nombres,apellidos,telefono){
     let existentes= database.datos[indice].deudores.length;
     for(let i=0;i<existentes;i++){
-        if(database.datos[indice].deudores[i].nombres==nombres && database.datos[indice].deudores[i].apellidos==apellidos)
+        if(database.datos[indice].deudores[i].nombres==nombres && 
+            database.datos[indice].deudores[i].apellidos==apellidos || 
+            database.datos[indice].deudores[i].celular==telefono)
         return true;
     }
 };
@@ -79,7 +81,7 @@ document.getElementById("btnagregar").addEventListener("click",()=>{
     let celular= document.getElementById("celular").value;
     let correo= document.getElementById("correo").value;
     let password= document.getElementById("password").value;
-    if(validacionExisteDeudores(nombres,apellidos)==true){
+    if(validacionExisteDeudores(nombres,apellidos,celular)==true){
         alert("El deudor ya existe");
         location.reload(); 
     }else{
@@ -91,7 +93,6 @@ document.getElementById("btnagregar").addEventListener("click",()=>{
     }
 });
 
-//MODIFICAR CON VALOR DE SELECT
 document.getElementById("btncargo").addEventListener("click",()=>{
     let deudor= document.getElementById("registrarcargo").value;
     let cargo= parseInt(document.getElementById("cargo").value);
@@ -107,8 +108,6 @@ document.getElementById("btncargo").addEventListener("click",()=>{
     //location.reload();
 });
 
-
-//MODIFICAR CON VALOR SELECT
 document.getElementById("btnpago").addEventListener("click",()=>{
     let deudor= document.getElementById("registrarpago").value;
     let cantidad= parseInt(document.getElementById("cantidadpago").value);
@@ -175,6 +174,7 @@ document.getElementById("btnmovimiento").addEventListener("click",()=>{
     }
     document.getElementById("movimiento").innerHTML+=texto;
 });
+
 let user= document.getElementById("formRegU");
 let pago= document.getElementById("registroPago");
 let cargo= document.getElementById("aplicarCargo");

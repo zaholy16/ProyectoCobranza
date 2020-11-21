@@ -15,10 +15,10 @@ function validacionExiste(telefono,contraseña){
     }
 }
 
-function validacionExisteRegistro(nombres,apellidos){
+function validacionExisteRegistro(nombres,apellidos,telefono){
     let existentes= database.datos.length;
     for(let i=0;i<existentes;i++){
-        if(database.datos[i].nombres==nombres && database.datos[i].apellidos==apellidos)
+        if(database.datos[i].nombres==nombres && database.datos[i].apellidos==apellidos || database.datos[i].celular==telefono)
         return true; 
     }
 }
@@ -30,7 +30,7 @@ document.getElementById("btnRegistrar").addEventListener("click",()=>{
     let celular= document.getElementById("telefono").value;
     let correo= document.getElementById("mail").value;
     let password= document.getElementById("Password").value;
-    if(validacionExisteRegistro(nombres,apellidos)==true){
+    if(validacionExisteRegistro(nombres,apellidos,celular)==true){
         alert("El propietario ya existe");
     }else{
         let prop= new propietario(nombres,apellidos,correo,celular,password,"propietario",[]);
